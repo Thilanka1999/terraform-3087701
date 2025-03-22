@@ -9,7 +9,7 @@ resource "aws_sagemaker_model" "xgboost_model" {
 
     environment = {
       SAGEMAKER_PROGRAM    = var.entry_point
-//      SAGEMAKER_SUBMIT_DIRECTORY = var.source_dir
+      SAGEMAKER_SUBMIT_DIRECTORY = var.source_dir
     }
   }
 }
