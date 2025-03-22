@@ -7,7 +7,7 @@ variable "role_arn" {
 variable "model_data_path" {
   description = "S3 path to the trained XGBoost model"
   type        = string
-  default     = "s3://mitrailabs-personaclassification/risk_prediction/Birmingham/models/model.tar.gz"
+  default     = "s3://mitrailabs-personaclassification/risk_prediction/Birmingham/bin/model.tar.gz"
 }
 
 variable "instance_type" {
@@ -25,7 +25,7 @@ variable "instance_count" {
 variable "endpoint_name" {
   description = "SageMaker endpoint name"
   type        = string
-  default     = "customer-creditrisk-V1"
+  default     = "customer-creditrisk-V2"
 
 }
 
