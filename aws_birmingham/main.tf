@@ -4,7 +4,7 @@ resource "aws_sagemaker_model" "xgboost_model" {
   execution_role_arn = var.role_arn
 
   primary_container {
-    image = "683313688378.dkr.ecr.us-east-1.amazonaws.com/sagemaker-xgboost:1.7-1"
+    image = "720646828776.dkr.ecr.ap-south-1.amazonaws.com/sagemaker-xgboost:1.7-1"
     model_data_url = var.model_data_path
 
     environment = {
