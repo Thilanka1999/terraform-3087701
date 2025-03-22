@@ -1,7 +1,7 @@
 variable "role_arn" {
   description = "SageMaker execution role ARN"
   type        = string
-  default     = arn:aws:iam::796932308591:role/service-role/SageMaker-ExecutionRole-20250214T145019
+  default     = "arn:aws:iam::796932308591:role/service-role/SageMaker-ExecutionRole-20250214T145019"
 }
 
 variable "model_data_path" {
