@@ -32,7 +32,7 @@ variable "endpoint_name" {
 variable "source_dir" {
   description = "Source directory for inference code"
   type        = string
-  default     = "models"
+  default     = "s3://mitrailabs-personaclassification/risk_prediction/Birmingham/bin/models"
 
 }
 
