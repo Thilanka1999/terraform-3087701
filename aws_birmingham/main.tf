@@ -14,5 +14,27 @@ resource "aws_sagemaker_model" "xgboost_model" {
   }
 }
 
+# SageMaker Endpoint Configuration
+resource "aws_sagemaker_endpoint_configuration" "xgboost_endpoint_config" {
+  name = "${var.endpoint_name}-config"
+
+  production_variants {
+    variant_name           = "variant-1"
+    model_name             = aws_sagemaker_model.xgboost_model.name
+    instance_type          = var.instance_type
+    initial_instance_count = var.instance_count
+  }
+}
+
+# SageMaker Endpoint
+resource "aws_sagemaker_endpoint" "xgboost_endpoint" {
+  name                 = var.endpoint_name
+  endpoint_config_name = aws_sagemaker_endpoint_configuration.xgboost_endpoint_config.name
+
+  tags = {
+    Name = "Customer Credit Risk Endpoint"
+  }
+}
+
 
 
