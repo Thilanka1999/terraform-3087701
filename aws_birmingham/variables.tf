@@ -19,7 +19,7 @@ variable "instance_type" {
 variable "instance_count" {
   description = "Number of instances"
   type        = number
-  default     = 1
+  default     = 2
 }
 
 variable "endpoint_name" {
