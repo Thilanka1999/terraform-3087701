@@ -4,12 +4,6 @@ variable "role_arn" {
   default     = "arn:aws:iam::796932308591:role/service-role/SageMaker-ExecutionRole-20250214T145019"
 }
 
-variable "model_data_path" {
-  description = "S3 path to the trained XGBoost model"
-  type        = string
-  default     = "s3://mitrailabs-personaclassification/risk_prediction/Birmingham/bin/model.tar.gz"
-}
-
 variable "instance_type" {
   description = "SageMaker instance type"
   type        = string
@@ -19,7 +13,7 @@ variable "instance_type" {
 variable "instance_count" {
   description = "Number of instances"
   type        = number
-  default     = 2
+  default     = 1
 }
 
 variable "endpoint_name" {
@@ -34,6 +28,12 @@ variable "source_dir" {
   type        = string
   default     = "s3://mitrailabs-personaclassification/risk_prediction/Birmingham/bin/models"
 
+}
+
+variable "model_data_path" {
+  description = "S3 path to the trained XGBoost model"
+  type        = string
+  default     = "s3://mitrailabs-personaclassification/risk_prediction/Birmingham/bin/models/model.tar.gz"
 }
 
 variable "entry_point" {
